@@ -1,0 +1,113 @@
+ <!-- <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class = "navbar-nav">
+      <li class = "nav-item">
+          <a *ngIf="userService.isUserLoggedIn()" routerLink="see-all-flights" routerLinkActive="active" class="nav-link">Flight List</a>
+      </li>
+      <li class = "nav-item">
+          <a *ngIf="userService.isUserLoggedIn()" routerLink="create-flight" routerLinkActive="active" class="nav-link">Add New Flight</a>
+      </li>
+      <li class = "nav-item">
+        <a *ngIf="!userService.isUserLoggedIn()" routerLink="/signin" class="nav-link">
+          <i class="fas fa-door-open"></i>
+          <span class="nav-item"> Login </span>
+        </a>
+      </li>
+
+      <li class = "nav-item">
+        <a *ngIf="userService.isUserLoggedIn()" routerLink="/signin" class="nav-link" (click)="userService.logOut()">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Logout </span>
+        </a>
+      </li>
+     
+  </ul>
+</nav>
+
+<h1 class="text-center"> {{title}} </h1>
+<div class = "container">
+  <router-outlet></router-outlet>
+</div>  -->
+
+
+<!-- <a *ngIf="!userService.isUserLoggedIn()" routerLink="/signin" class="nav-link">
+  <nav>
+    <label class="logo">Airline</label>
+    <ul>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="">About</a></li>
+      <li>
+        <select>
+          <option>FlightService</option>
+          <option>FlightService</option>
+          <option>FlightService</option>
+        </select>
+      </li>
+      <li><a href="#">CompanyService</a></li>
+      <li><a href="#">AirportService</a></li>
+      <li><a href="#">Feedback</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </nav> 
+  <a *ngIf="!userService.isUserLoggedIn()" routerLink="/signin" class="nav-link">
+  <router-outlet></router-outlet>
+  <a *ngIf="userService.isUserLoggedIn()" routerLink="/signin" class="nav-link" (click)="userService.logOut()">
+  <a *ngIf="userService.isUserLoggedIn()" routerLink="see-all-flights" routerLinkActive="active" class="nav-link">Flight List</a>
+  <a *ngIf="userService.isUserLoggedIn()" routerLink="create-flight" routerLinkActive="active" class="nav-link">Add New Flight</a> -->
+
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AIRLINE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <ng-container *ngIf="userService.isUserLoggedIn()">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:blanchedalmond;">
+                Flight Service
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/see-all-flights">Flight List</a></li>
+                <li><a class="dropdown-item" href="/create-flight">Add Flight</a></li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Flight Company Service
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Company List</a></li>
+                <li><a class="dropdown-item" href="#">Add Company</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Airport Service
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Airport List</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Feedback</a>
+            </li> -->
+          </ng-container>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us" style="color: blanchedalmond;">About</a>
+          </li>
+          <li class="nav-item" *ngIf="userService.isUserLoggedIn()" (click)="userService.logOut()">
+            <a class="nav-link" href="/signin" style="color: blanchedalmond;">Logout</a>
+          </li>
+          <li class="nav-item" *ngIf="!userService.isUserLoggedIn()">
+            <a class="nav-link" href="/signin"style="color: blanchedalmond;">Login </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+
+
+
+

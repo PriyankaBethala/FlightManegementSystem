@@ -1,0 +1,95 @@
+
+<div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Flight name"
+        [(ngModel)]="flightName"
+        />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchByName()" style="color: black;"
+        >
+        <i class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
+      </div>
+    </div>
+</div>
+  <div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger" >Sort by:</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      </button>
+       <ul class="dropdown-menu" style="color:purple;">
+        <a (click)="getFlightBySorting('costlow')" >TicketCost<i class="fa-solid fa-up-long"></i></a>
+        <a (click)="getFlightBySorting('costHigh')">TicketCost<i class="fa-solid fa-down-long"></i></a>
+        <a (click)="getFlightBySorting('ratinglow')" >FlightRating<i class="fa-solid fa-up-long"></i></a>
+        <a (click)="getFlightBySorting('ratingHigh')" >FlightRating<i class="fa-solid fa-down-long"></i></a>
+           
+        
+      </ul>
+    </div>
+
+      <!-- <div class="dropdown">
+      <button class="dropbtn">Sort by:</button>
+      <div class="dropdown-content">
+      <a (click)="getFlightBySorting('costlow')">TicketCost Asc</a>
+      <a (click)="getFlightBySorting('costHigh')">TicketCost Desc</a>
+      <a (click)="getFlightBySorting('ratinglow')" >FlightRating Asc</a>
+      <a (click)="getFlightBySorting('ratingHigh')" >FlightRating Desc</a>
+        
+  </div>  -->
+  
+
+  <br><br><p style="font-size: 16px;font-weight: bold; color: black; margin-bottom: 10px;margin-left: 1%;">Filter By: </p>
+    <button class="btn btn-outline-secondary" type="button" (click)="getDomestic()" style="color:lemonchiffon;">Domestic Flights</button>
+    <button class="btn btn-outline-secondary" type="button" (click)="getDomestic()" style="color:lemonchiffon;"> Non Domestic Flights</button>
+    <br>
+    <br>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th> Flight Name</th>
+            <th> Flight Number </th>
+            <th> departureCity</th>
+            <th> arrivalCity</th>
+            <th> laguageWeight</th>
+            <th> Ticket Cost</th>
+            <th> flight Ratings </th>
+            <th> isDomestic</th>
+            <th> Actions </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights">
+            <td> {{ flight.flightName }} </td>
+            <td> {{ flight.flightNumber }} </td>
+            <td> {{ flight.departureCity}} </td>
+            <td> {{ flight.arrivalCity}} </td>
+            <td> {{ flight.laguageWeight}} </td>
+            <td> {{ flight.ticketCost }} </td>
+            <td> {{ flight.flightRating }} </td>
+            <td> {{flight.isDomestic}}</td>
+            <td>
+                <button (click)="updateFlight(flight.id)" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i> Update</button>
+                <button (click)="deleteFlight(flight.id)" class="btn btn-danger"><i class="fa-solid fa-trash-arrow-up"></i> Delete</button>
+                <button (click)="viewFlight(flight.id)" class="btn btn-info"><i class="fa-sharp fa-solid fa-eye"></i> View</button>
+                
+            </td>
+       </tr>
+       <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFlights()" style="position: absolute; right: 0;">
+        <i class="fa-solid fa-trash"></i> Remove All
+    </button>
+    
+             <!-- <tr *ngIf="flights.length !== 0"> -->
+                 <!-- <button class="m-3 btn btn-sm btn-danger"(click)="removeAllFlights()"> 
+                 <i class="fa-sharp fa-solid fa-xmark"></i>  Remove All
+            </button> -->
+        <!-- </tr>  -->
+    </tbody> 
+</table>

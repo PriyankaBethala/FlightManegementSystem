@@ -1,0 +1,66 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="card">
+      <div class="text-center">
+        <h1>Login</h1>
+        <h6>Please enter email & password!!</h6>
+      </div>
+      <form>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label> 
+            <input type="email" id="email" name="email" placeholder="Enter your email" class="input-xlarge" #email>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label> 
+            <input type="password" id="password" name="password" placeholder="Set Password" class="input-xlarge" #password>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button> 
+          <button type="submit" class="btn btn-primary" (click)="signin(email.value, password.value)">Signin</button>
+        </form>
+      </form>
+    </div>
+  </div>
+</div>-->
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="login-page"  style="margin-top: 5%;">
+  <div class="form">
+    <div class="login">
+      <div class="login-header">
+        <h3>LOGIN</h3>
+        <p>Please enter your credentials to login.</p>
+      </div>
+    </div>
+    <form class="login-form">
+      <input type="email" id="email" name="email" placeholder="Enter your email" class="input-xlarge" #email>
+      <input type="password" id="password" name="password" placeholder="Set Password" class="input-xlarge" #password>
+
+      <button type="submit" class="btn btn-primary" (click)="signin(email.value, password.value)">Signin</button>
+      <a href="/signup">Not registerd? Click here to singup!!</a>
+    </form>
+  </div>
+</div>
+
+

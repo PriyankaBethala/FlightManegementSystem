@@ -1,0 +1,20 @@
+
+   .container{
+     border-color: black;
+    background-color: antiquewhite; 
+    width:fit-content;
+    background-position:  center;
+    margin-top:-20px;  
+    text-align:center;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}  
+
+   
+  
+   /* #hi{
+    text-align: center;
+  }  */
+  
